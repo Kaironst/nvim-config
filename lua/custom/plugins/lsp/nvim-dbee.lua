@@ -11,5 +11,9 @@ return {
   end,
   config = function()
     require('dbee').setup(--[[optional config]])
+
+    vim.keymap.set('n', '<Leader>Db', '<cmd>lua require("dbee").toggle()<CR>', {
+      desc = 'Toggles Database interface on/off',
+    })
   end,
 }
