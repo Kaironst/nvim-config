@@ -1,4 +1,4 @@
-vim.env.JDTLS_JVM_ARGS = '-javaagent:' .. vim.fn.expand '$HOME/.local/share/nvim/mason/packages/lombok-nightly/lombok.jar'
+vim.env.JDTLS_JVM_ARGS = '-javaagent:' .. vim.fn.expand '$HOME/.local/share/nvim/mason/packages/jdtls/lombok.jar'
 
 return {
   'mfussenegger/nvim-jdtls',
@@ -21,16 +21,17 @@ return {
     local jdtls_path = home .. '/.local/share/nvim/mason/packages/jdtls'
 
     -- Path to lombok
-    local lombok_jar = home .. '/.local/share/nvim/mason/packages/lombok-nightly/lombok.jar'
+    local lombok_jar = home .. '/.local/share/nvim/mason/packages/jdtls/lombok.jar'
 
     -- Main jdtls command
     local config = {
       cmd = {
         'java',
+        '-javaagent:' .. lombok_jar,
         '-Declipse.application=org.eclipse.jdt.ls.core.id1',
         '-Dosgi.bundles.defaultStartLevel=4',
         '-jar',
-        jdtls_path .. '/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar',
+        vim.fn.glob(jdtls_path .. '/plugins/org.eclipse.equinox.launcher_*.jar'),
         '-configuration',
         jdtls_path .. '/config_linux',
         '-data',
@@ -41,11 +42,6 @@ return {
         java = {
           signatureHelp = { enabled = true },
           contentProvider = { preferred = 'fernflower' },
-        },
-      },
-      init_options = {
-        bundles = {
-          vim.fn.glob(lombok_jar),
         },
       },
     }
