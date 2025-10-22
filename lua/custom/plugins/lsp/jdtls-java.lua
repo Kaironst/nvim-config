@@ -1,3 +1,4 @@
+vim.env.JDTLS_JVM_ARGS = '-javaagent:' .. vim.fn.expand '$HOME/.local/share/nvim/mason/packages/jdtls/lombok.jar'
 return {
   {
     'mfussenegger/nvim-jdtls',
@@ -31,7 +32,7 @@ return {
           '-jar',
           launcher_jar,
           '-configuration',
-          mason_path .. '/config_linux', -- adapt for your OS
+          mason_path .. '/config_mac', -- adapt for your OS
           '-data',
           workspace_dir,
         },
@@ -40,9 +41,13 @@ return {
           bundles = {},
         },
       }
-
-      -- Start or attach JDTLS
-      jdtls.start_or_attach(config)
+      -- -- Start or attach jdtls when opening Java files
+      -- vim.api.nvim_create_autocmd('FileType', {
+      --   pattern = 'java',
+      --   callback = function()
+      --     jdtls.start_or_attach(config)
+      --   end,
+      -- })
     end,
   },
 }
