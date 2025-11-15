@@ -162,7 +162,18 @@ return {
     --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
     local servers = {
       clangd = {},
-      ts_ls = {},
+      ts_ls = {
+        init_options = {
+          hostInfo = 'neovim',
+          preferences = {
+            disableSuggestions = false,
+          },
+          tsserver = {
+            -- This tells tsserver to use your project's TypeScript install
+            path = 'node_modules/typescript/lib',
+          },
+        },
+      },
       angularls = {
         cmd = {
           'ngserver',
