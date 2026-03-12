@@ -31,6 +31,9 @@ return {
     vim.keymap.set('n', '<leader>pa', function()
       require('harpoon'):list():add()
     end, { desc = 'add buffer to harpoon' })
+    vim.keymap.set('n', '<leader>pd', function()
+      require('harpoon'):list():remove()
+    end, { desc = 'remove buffer from harpoon' })
 
     vim.keymap.set('n', '<leader>pp', function()
       require('harpoon'):list():prev()
