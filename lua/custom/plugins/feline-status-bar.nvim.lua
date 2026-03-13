@@ -1,6 +1,12 @@
 return {
-  'feline-nvim/feline.nvim',
+  'nvim-lualine/lualine.nvim',
+  dependencies = { 'nvim-tree/nvim-web-devicons' },
   config = function()
-    require('feline').setup()
+    local gruvbox = require 'lualine.themes.gruvbox'
+    require('lualine').setup {
+      options = {
+        theme = gruvbox,
+      },
+    }
   end,
 }
