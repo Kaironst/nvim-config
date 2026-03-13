@@ -10,19 +10,17 @@ return {
     'MunifTanjim/nui.nvim',
   },
   lazy = false,
-  keys = {
-    { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
-  },
-  opts = {
-    filesystem = {
-      window = {
-        mappings = {
-          ['\\'] = 'close_window',
-        },
-      },
-    },
-  },
+  keys = {},
+  opts = {},
   config = function()
     require('nvim-web-devicons').setup()
+
+    vim.keymap.set('n', '\\', function()
+      if vim.bo.filetype == 'neo-tree' then
+        vim.cmd 'Neotree close'
+      else
+        vim.cmd 'Neotree reveal'
+      end
+    end, { desc = 'toggle NeoTree' })
   end,
 }
