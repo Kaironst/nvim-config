@@ -31,7 +31,7 @@ return {
     map('n', '<leader>a0', '<Cmd>BufferLast<CR>', opts)
 
     -- Pin/unpin buffer
-    map('n', '<leader>ap', '<Cmd>BufferPin<CR>', opts)
+    map('n', '<leader>aP', '<Cmd>BufferPin<CR>', opts)
 
     -- Goto pinned/unpinned buffer
     --                 :BufferGotoPinned
@@ -51,15 +51,15 @@ return {
     --                 :BufferCloseBuffersRight
 
     -- Magic buffer-picking mode
-    map('n', '<leader>aPp', '<Cmd>BufferPick<CR>', opts)
-    map('n', '<leader>aPd', '<Cmd>BufferPickDelete<CR>', opts)
+    map('n', '<leader>ap', '<Cmd>BufferPick<CR>', opts)
+    map('n', '<leader>ad', '<Cmd>BufferPickDelete<CR>', opts)
 
     -- Sort automatically by...
-    map('n', '<leader>ab', '<Cmd>BufferOrderByBufferNumber<CR>', opts)
-    map('n', '<leader>an', '<Cmd>BufferOrderByName<CR>', opts)
-    map('n', '<leader>ad', '<Cmd>BufferOrderByDirectory<CR>', opts)
-    map('n', '<leader>al', '<Cmd>BufferOrderByLanguage<CR>', opts)
-    map('n', '<leader>aw', '<Cmd>BufferOrderByWindowNumber<CR>', opts)
+    map('n', '<leader>aob', '<Cmd>BufferOrderByBufferNumber<CR>', opts)
+    map('n', '<leader>aon', '<Cmd>BufferOrderByName<CR>', opts)
+    map('n', '<leader>aod', '<Cmd>BufferOrderByDirectory<CR>', opts)
+    map('n', '<leader>aol', '<Cmd>BufferOrderByLanguage<CR>', opts)
+    map('n', '<leader>aow', '<Cmd>BufferOrderByWindowNumber<CR>', opts)
 
     -- Other:
     -- :BarbarEnable - enables barbar (enabled by default)
