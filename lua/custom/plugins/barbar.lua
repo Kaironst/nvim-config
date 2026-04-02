@@ -11,8 +11,8 @@ return {
     local opts = { noremap = true, silent = true }
 
     -- Move to previous/next
-    map('n', '<leader>a.', '<Cmd>BufferPrevious<CR>', opts)
-    map('n', '<leader>a,', '<Cmd>BufferNext<CR>', opts)
+    map('n', '<leader>a,', '<Cmd>BufferPrevious<CR>', opts)
+    map('n', '<leader>a.', '<Cmd>BufferNext<CR>', opts)
 
     -- Re-order to previous/next
     map('n', '<leader>a<', '<Cmd>BufferMovePrevious<CR>', opts)
