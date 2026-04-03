@@ -11,34 +11,34 @@ return {
     local opts = { noremap = true, silent = true }
 
     -- Move to previous/next
-    map('n', '<leader>a,', '<Cmd>BufferPrevious<CR>', opts)
-    map('n', '<leader>a.', '<Cmd>BufferNext<CR>', opts)
+    map('n', 'ga,', '<Cmd>BufferPrevious<CR>', opts)
+    map('n', 'ga.', '<Cmd>BufferNext<CR>', opts)
 
     -- Re-order to previous/next
-    map('n', '<leader>a<', '<Cmd>BufferMovePrevious<CR>', opts)
-    map('n', '<leader>a>', '<Cmd>BufferMoveNext<CR>', opts)
+    map('n', 'ga<', '<Cmd>BufferMovePrevious<CR>', opts)
+    map('n', 'ga>', '<Cmd>BufferMoveNext<CR>', opts)
 
     -- Goto buffer in position...
-    map('n', '<leader>a1', '<Cmd>BufferGoto 1<CR>', opts)
-    map('n', '<leader>a2', '<Cmd>BufferGoto 2<CR>', opts)
-    map('n', '<leader>a3', '<Cmd>BufferGoto 3<CR>', opts)
-    map('n', '<leader>a4', '<Cmd>BufferGoto 4<CR>', opts)
-    map('n', '<leader>a5', '<Cmd>BufferGoto 5<CR>', opts)
-    map('n', '<leader>a6', '<Cmd>BufferGoto 6<CR>', opts)
-    map('n', '<leader>a7', '<Cmd>BufferGoto 7<CR>', opts)
-    map('n', '<leader>a8', '<Cmd>BufferGoto 8<CR>', opts)
-    map('n', '<leader>a9', '<Cmd>BufferGoto 9<CR>', opts)
-    map('n', '<leader>a0', '<Cmd>BufferLast<CR>', opts)
+    map('n', 'ga1', '<Cmd>BufferGoto 1<CR>', opts)
+    map('n', 'ga2', '<Cmd>BufferGoto 2<CR>', opts)
+    map('n', 'ga3', '<Cmd>BufferGoto 3<CR>', opts)
+    map('n', 'ga4', '<Cmd>BufferGoto 4<CR>', opts)
+    map('n', 'ga5', '<Cmd>BufferGoto 5<CR>', opts)
+    map('n', 'ga6', '<Cmd>BufferGoto 6<CR>', opts)
+    map('n', 'ga7', '<Cmd>BufferGoto 7<CR>', opts)
+    map('n', 'ga8', '<Cmd>BufferGoto 8<CR>', opts)
+    map('n', 'ga9', '<Cmd>BufferGoto 9<CR>', opts)
+    map('n', 'ga0', '<Cmd>BufferLast<CR>', opts)
 
     -- Pin/unpin buffer
-    map('n', '<leader>aP', '<Cmd>BufferPin<CR>', opts)
+    map('n', 'gaP', '<Cmd>BufferPin<CR>', opts)
 
     -- Goto pinned/unpinned buffer
     --                 :BufferGotoPinned
     --                 :BufferGotoUnpinned
 
     -- Close buffer
-    map('n', '<leader>ac', '<Cmd>BufferClose<CR>', opts)
+    map('n', 'gac', '<Cmd>BufferClose<CR>', opts)
 
     -- Wipeout buffer
     --                 :BufferWipeout
@@ -51,15 +51,15 @@ return {
     --                 :BufferCloseBuffersRight
 
     -- Magic buffer-picking mode
-    map('n', '<leader>ap', '<Cmd>BufferPick<CR>', opts)
-    map('n', '<leader>ad', '<Cmd>BufferPickDelete<CR>', opts)
+    map('n', 'gap', '<Cmd>BufferPick<CR>', opts)
+    map('n', 'gad', '<Cmd>BufferPickDelete<CR>', opts)
 
     -- Sort automatically by...
-    map('n', '<leader>aob', '<Cmd>BufferOrderByBufferNumber<CR>', opts)
-    map('n', '<leader>aon', '<Cmd>BufferOrderByName<CR>', opts)
-    map('n', '<leader>aod', '<Cmd>BufferOrderByDirectory<CR>', opts)
-    map('n', '<leader>aol', '<Cmd>BufferOrderByLanguage<CR>', opts)
-    map('n', '<leader>aow', '<Cmd>BufferOrderByWindowNumber<CR>', opts)
+    map('n', 'gaob', '<Cmd>BufferOrderByBufferNumber<CR>', opts)
+    map('n', 'gaon', '<Cmd>BufferOrderByName<CR>', opts)
+    map('n', 'gaod', '<Cmd>BufferOrderByDirectory<CR>', opts)
+    map('n', 'gaol', '<Cmd>BufferOrderByLanguage<CR>', opts)
+    map('n', 'gaow', '<Cmd>BufferOrderByWindowNumber<CR>', opts)
 
     -- Other:
     -- :BarbarEnable - enables barbar (enabled by default)
