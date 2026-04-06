@@ -3,12 +3,6 @@
 --
 -- See the kickstart.nvim README for more information
 return {
-
-    --telescope file browser
-    {
-        "nvim-telescope/telescope-file-browser.nvim",
-        dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
-    }
-
-
+  'nvim-telescope/telescope-file-browser.nvim',
+  dependencies = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' },
 }
