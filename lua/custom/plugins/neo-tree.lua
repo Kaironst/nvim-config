@@ -8,18 +8,29 @@ return {
     'nvim-lua/plenary.nvim',
     'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
     'MunifTanjim/nui.nvim',
+    'folke/snacks.nvim',
   },
   lazy = false,
   keys = {},
   opts = {},
   config = function()
-    require('nvim-web-devicons').setup()
+    require('nvim-web-devicons').setup {
+
+      window = {
+        position = 'float',
+        width = 40,
+        mapping_options = {
+          noremap = true,
+          nowait = true,
+        },
+      },
+    }
 
     vim.keymap.set('n', '\\', function()
       if vim.bo.filetype == 'neo-tree' then
         vim.cmd 'Neotree close'
       else
-        vim.cmd 'Neotree reveal'
+        vim.cmd 'Neotree float'
       end
     end, { desc = 'toggle NeoTree' })
   end,
