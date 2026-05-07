@@ -24,6 +24,14 @@ return {
           nowait = true,
         },
       },
+
+      default_component_configs = {
+        icon = {
+          folder_closed = '',
+          folder_open = '',
+          folder_empty = '',
+        },
+      },
     }
 
     vim.keymap.set('n', '\\', function()
