@@ -23,6 +23,9 @@ return {
       [[⣿⡇⠀⠀⠀⣿⡇⣿⣷⣄⡀⠀⠉⠁⣿⣇⠀⠀⠀⣿⡇⣀⡉⠻⢿⣶⣄⡰⣿⣇⠀⠀⠀⣿⡿⣿⣿⣅⡀⢸⣿⡀⠀⠀⢸⣿⠀]],
       [[⠙⠿⣷⣶⣦⣿⡇⠛⠋⠛⢿⣷⣤⡀⠙⠿⣷⣶⡦⣿⡇⢿⣷⣶⣶⣿⣿⣿⠙⠿⣷⣶⡆⣿⡟⠛⠋⠻⢿⣶⣿⣿⣷⣶⣼⣿⡁]],
     }
+    -- Set the color to a specific hex code (e.g., green)
+    vim.api.nvim_set_hl(0, 'AlphaHeader', { fg = '#47d7ff' })
+    dashboard.section.header.opts.hl = 'AlphaHeader'
     require('alpha').setup(dashboard.config)
   end,
 }
