@@ -7,6 +7,15 @@ return {
     -- available: devicons, mini, default is mini
     -- if provider not loaded and enabled is true, it will try to use another provider
     -- dashboard.file_icons.provider = 'devicons'
+
+
+    dashboard.section.buttons.val = {
+      dashboard.button("t", "  Open Terminal", ":te<CR>"),
+      dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
+      dashboard.button("q", "󰅚  Quit", ":qa<CR>"),
+    }
+
+
     dashboard.section.header.val = {
       [[ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⣠⣤⣶⣶⣿⣿⣿⣿⣿⣶⣶⣶⣤⣄⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀]],
       [[ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⣠⣴⣿⣿⠿⠟⠛⣉⣭⣭⣭⣭⣉⠛⠻⠿⣿⣿⣦⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀]],
