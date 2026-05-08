@@ -79,11 +79,6 @@ return {
       ignore_case = true,
     },
     sort_by_name = true,
-    sidebar_filetypes = {
-      ['neo-tree'] = {
-        event = 'bufwinleave',
-      },
-    },
     non_name_title = 'empty file',
   },
   version = '^1.0.0', -- optional: only update when a new 1.x version is released
