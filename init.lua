@@ -7,9 +7,9 @@ vim.api.nvim_create_autocmd('ModeChanged', {
   pattern = '*',
   callback = function()
     if
-      ((vim.v.event.old_mode == 's' and vim.v.event.new_mode == 'n') or vim.v.event.old_mode == 'i')
-      and require('luasnip').session.current_nodes[vim.api.nvim_get_current_buf()]
-      and not require('luasnip').session.jump_active
+        ((vim.v.event.old_mode == 's' and vim.v.event.new_mode == 'n') or vim.v.event.old_mode == 'i')
+        and require('luasnip').session.current_nodes[vim.api.nvim_get_current_buf()]
+        and not require('luasnip').session.jump_active
     then
       require('luasnip').unlink_current()
     end
@@ -35,7 +35,7 @@ require('lazy').setup {
 
   { import = 'custom.plugins' },
   { import = 'custom.plugins.lsp' },
-  { import = 'custom.themes.neocyber' },
+  { import = 'custom.themes.cybercatppuccin' },
 
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
