@@ -23,7 +23,7 @@ return {
           },
         }, -- white background with red text}
         lualine_x = { { 'encoding', color = { fg = 'D90202', bg = '#808080' }, separator = { left = '' } } }, -- white background with red text
-        lualine_y = { { 'lsp_status', color = { fg = '#33D4C4', bg = '#362921' }, separator = { left = '' } } }, -- grey background with cyan text
+        lualine_y = { { 'lsp_status', color = { fg = '#33D4C4', bg = '#303030' }, separator = { left = '' } } }, -- grey background with cyan text
         lualine_z = { { 'location', separator = { left = '', right = '' } } }, -- leave colors alone
       },
     }
