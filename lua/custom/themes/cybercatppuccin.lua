@@ -121,5 +121,103 @@ return {
     }
     -- Sets Catppuccin as the color scheme for Neovim
     vim.cmd 'colorscheme catppuccin'
+
+    --Sets dashboard theme
+    local dashboard = require 'alpha.themes.dashboard'
+    -- available: devicons, mini, default is mini
+    -- if provider not loaded and enabled is true, it will try to use another provider
+    -- dashboard.file_icons.provider = 'devicons'
+
+
+    dashboard.section.buttons.val = {
+      dashboard.button("t", "  Open Terminal", ":te<CR>"),
+      dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
+      dashboard.button("q", "󰅚  Quit", ":qa<CR>"),
+    }
+
+
+    dashboard.section.header.val = {
+      [[ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⣠⣤⣶⣶⣿⣿⣿⣿⣿⣶⣶⣶⣤⣄⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀]],
+      [[ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⣠⣴⣿⣿⠿⠟⠛⣉⣭⣭⣭⣭⣉⠛⠻⠿⣿⣿⣦⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀]],
+      [[ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⣠⣾⣿⠿⠋⠁⠀⣰⣾⣿⣿⣿⣿⣿⣿⣷⡄⠀⠈⠙⠿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀]],
+      [[ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⢀⣼⣿⡿⠁ ⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⠀⠀⠀⠀⠈⢿⣿⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀]],
+      [[ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣾⣿⠏⠀ ⣀⣀ ⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⡟ ⢀⣀⣀⡀⠀⠹⣿⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀]],
+      [[ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⡏⣰⣾⣿⣿⣿⣿⣷⣮⠻⣿⣿⣿⣿⣿⣿⠟⣵⣾⣿⣿⣿⣿⣷⣆⢹⣿⣷ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀]],
+      [[ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣿⣿⣸⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀⢙⣿⣿⡋⠀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣇⣿⣿⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀]],
+      [[ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⡏⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⢸⣿⣿⡇⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢹⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀]],
+      [[ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⠘⢿⣿⣿⣿⣿⣿⣿⣿⣇⠀⢸⣿⣿⡇⠀⣼⣿⣿⣿⣿⣿⣿⣿⡿⠃⣽⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀]],
+      [[ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⡀⠀⠙⠛⠿⠿⠛⠛⢿⣿⣷⣜⣿⣿⡇⣾⣿⡿⠛⠻⠿⠿⠛⠋⠀⢠⣿⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀]],
+      [[ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣿⣷⠀ ⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⡿⠋⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀]],
+      [[ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣿⣷⡀ ⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⡇ ⠀⠀⠀⠀⠀⠀ ⢀⣾⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀]],
+      [[ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣦⡀ ⠀⠀⠀⠀⠀⢸⣿⣿⡇⠀⠀⠀⠀⠀⠀ ⣴⣿⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀]],
+      [[ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣿⣦⣄ ⠀⠀⠀⢸⣿⣿⡇ ⠀⠀ ⣠⣶⣿⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀]],
+      [[ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠻⢿⣿⣿⣶⣧⣶⣿⣿⣶⣶⣶⣿⣿⡿⠟⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀]],
+      [[ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠛⠛⠛⠿⠻⠛⠛⠛⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀]],
+      [[ ⠀⠀⠀⠀ ⠀⣀⣀⣀⣀ ⠀ ⢀⣀⣀⣀⣀⣀⣀⣀⣀⣀⡀⠀⠀ ⠀ ⣀⣀⣀⠀ ⠀⠀⠀⠀⠀⠀⣀⣀⣀⣀⠀⠀⠀ ⠀ ⣀⣀⣀⣀⠀⠀ ⣀⣀⣀ ⠀ ⢀⣀⣀⣀⣀⣀⣀⣀⣀ ⠀ ⠀⠀⠀⠀]],
+      [[ ⠀⠀ ⢀⣶⣿⣿⣿⣿⣿⣷⣄ ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡆⢠⣴⣿⣿⣿⣿⣿⣷⣤ ⠀ ⠀⠀⠀⣿⣿⣿⣿⣶⡄ ⢀⣴⣿⣿⣿⣿⣿⣷⣄⠀⣿⣿⣿⣿ ⣤⣾⣿⣿⡿⣻⣿⣿⣿⣿⣿⣿⣦⡄ ⠀⠀⠀]],
+      [[ ⠀⠀⢠⣿⣿⡟⠉⠁⠈⠛⣿⣿⣷⢸⣿⣿⠉⠉⠉⠉⠉⢉⣿⣿⣇⣿⣿⡟⠋⠁⠀⠙⢿⣿⣿ ⠲⣶⣶⣶⣿⣍⡉⠉⠉⠁⢰⣿⣿⡟⠉⠁⠈⠙⣿⣿⣷⢽⣿⣿⣿⣿⡿⠛⠁⣼⣿⣿⠋⠉⠀⠉⠻⣿⣿⡆⠀⠀⠀]],
+      [[ ⠀⠀⢸⣿⣿⡀⠀⠀⠀⠀⢸⣿⣿⢸⣿⣿⣷⣤⡀ ⠀⠀⠀⠀⢸⣿⣿⡅ ⠀⠀⠀⢸⣿⣿ ⣠⣀⡉⠻⢿⣿⣿⣶⣄⡀⢸⣿⣿  ⠀⠀⠀⢸⣿⣿⢽⣿⣿⣿⣥⡀⠀ ⣿⣿⣧⠀⠀⠀⠀⠀⣿⣿⡇⠀⠀⠀]],
+      [[ ⠀⠀⠘⢿⣿⣷⣤⣤⣤⡀⢸⣿⣿⢸⣿⣿⣿⣿⣿⣷⣦⣀⠀⠀⠈⢿⣿⣿⣦⣤⣴⣄⢸⣿⣿⢺⣿⣿⣧⣤⣤⣭⣿⣿⣿⣿⡞⢿⣿⣷⣦⣤⣤⣀⢸⣿⣿⢽⣿⣿⢿⣿⣿⣶⣤⡹⣿⣿⣶⣤⣤⣤⡀⣿⣿⡇⠀⠀⠀]],
+      [[ ⠀⠀⠀ ⠙⠿⢿⣿⣿⣿⢸⣿⣿⠀⠀⠀⠀ ⠙⠿⣿⣿⣷⣦⡀⠀⠙⠻⠿⣿⣿⣿⢸⣿⣿ ⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠙⠿⢿⣿⣿⣿⢸⣿⣿⠀⠀⠀⠀⠈⠛⢿⣿⣿⣾⣿⠿⣿⣿⣿⡇⣿⣿⡇⠀⠀⠀]],
+    }
+    -- Set the color to a specific hex code (e.g., green)
+    vim.api.nvim_set_hl(0, 'AlphaHeader', { fg = '#ff0000' })
+
+    -- Reapply after colorscheme changes
+    vim.api.nvim_create_autocmd('ColorScheme', {
+      pattern = '*',
+      callback = function()
+        vim.api.nvim_set_hl(0, 'AlphaHeader', { fg = '#ff0000' })
+      end,
+    })
+
+    dashboard.section.header.opts.hl = 'AlphaHeader'
+    require('alpha').setup(dashboard.config)
+
+    --lualine theme
+    require('lualine').setup {
+      options = {
+        theme = 'catppuccin-nvim',
+      },
+      sections = {
+        lualine_a = { { 'mode', separator = { left = '', right = '' } } }, -- leave colors alone
+        lualine_b = { { 'filename', color = { fg = '#33D4C4', bg = '#303030' }, separator = { left = '', right = '' } } }, -- grey background with cyan text
+        lualine_c = {
+          { 'branch', color = { fg = '#D90202', bg = '#808080' }, separator = { right = '' } },
+          {
+            'diff',
+            colored = true,
+            diff_color = {
+              added = { fg = '#14DE2C', bg = '#bbbbbb' },
+              modified = { fg = '#932CB0', bg = '#bbbbbb' },
+              removed = { fg = '#D90202', bg = '#bbbbbb' },
+            },
+            separator = { right = '' },
+          },
+        }, -- white background with red text}
+        lualine_x = { { 'encoding', color = { fg = 'D90202', bg = '#808080' }, separator = { left = '' } } }, -- white background with red text
+        lualine_y = { { 'lsp_status', color = { fg = '#33D4C4', bg = '#303030' }, separator = { left = '' } } }, -- grey background with cyan text
+        lualine_z = { { 'location', separator = { left = '', right = '' } } }, -- leave colors alone
+      },
+    }
+
+    --barbar
+
+    require "barbar".setup {
+      animation = true,
+      focus_on_close = 'previous',
+      highlight_visible = false,
+      highlight_alternate = false,
+      highlight_inactive_file_icons = false,
+      icons = {
+        preset = 'slanted',
+        separator_at_end = true,
+      },
+      sort = {
+        ignore_case = true,
+      },
+      sort_by_name = true,
+      non_name_title = 'empty file',
+    }
   end,
 }
