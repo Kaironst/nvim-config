@@ -35,7 +35,7 @@ require('lazy').setup {
 
   { import = 'custom.plugins' },
   { import = 'custom.plugins.lsp' },
-  { import = 'custom.themes.cybercatppuccin' },
+  { import = 'custom.themes.gruvbox' },
 
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
